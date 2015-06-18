@@ -14,12 +14,10 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         MainWindow.cpp \
-    PhotonDialog.cpp \
-    TofCalculator.cpp
+    PhotonDialog.cpp
 
 HEADERS  += MainWindow.hpp \
-    PhotonDialog.hpp \
-    TofCalculator.hpp
+    PhotonDialog.hpp
 
 FORMS    += MainWindow.ui \
     PhotonDialog.ui

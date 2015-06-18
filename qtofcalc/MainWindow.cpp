@@ -1,7 +1,5 @@
-#include <iostream>
-
-#include "PhotonDialog.hpp"
 #include "MainWindow.hpp"
+#include "PhotonDialog.hpp"
 #include "ui_MainWindow.h"
 
 MainWindow::MainWindow(QWidget *parent) :
