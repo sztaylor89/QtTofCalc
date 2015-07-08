@@ -27,3 +27,6 @@ HEADERS  += MainWindow.hpp \
 FORMS    += MainWindow.ui \
     PhotonDialog.ui \
     MassWarningDialog.ui
+
+DISTFILES += \
+    masses.dat

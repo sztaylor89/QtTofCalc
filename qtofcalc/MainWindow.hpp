@@ -55,6 +55,10 @@ private:
     void CalcDistance(void) {
         distance_ = (time_*c_)*std::sqrt((2.*energy_)/mass_);
     }
+
+    void CalcGammaTimeOfFlight(void) {
+        time_ = distance_/(c_/idx_);
+    }
 };
 
 #endif // MAINWINDOW_HPP

@@ -9,7 +9,7 @@
 using namespace std;
 
 Mass::Mass() {
-    ifstream infile("../qtofcalc/masses.dat");
+    ifstream infile("masses.dat");
     Tokenizer t;
     t.SetDelimiter(" ");
     if(!infile) {

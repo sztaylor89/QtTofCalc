@@ -30,11 +30,14 @@ void MainWindow::on_checkBox_clicked(bool checked) {
         ui->lineEdit_z->setEnabled(false);
         ui->lineEdit_a->setEnabled(false);
         ui->lineEdit_m->setEnabled(false);
+        ui->lineEdit_en->setEnabled(false);
         PhotonDialog diag(1.0);
         diag.exec();
         idx_ = diag.GetMediumIndexRefraction();
         isPhoton_ = true;
+        mass_ = 0.0;
     } else {
+        ui->lineEdit_en->setEnabled(true);
         ui->lineEdit_z->setEnabled(true);
         ui->lineEdit_a->setEnabled(true);
         ui->lineEdit_m->setEnabled(true);
@@ -66,13 +69,11 @@ void MainWindow::on_lineEdit_en_editingFinished() {
         if(distance_ != 0) {
             CalcTimeOfFlight();
             txt = QString::number(time_);
-            cout << "Time : " << time_ << endl;
             ui->lineEdit_t->selectAll();
             ui->lineEdit_t->insert(txt);
         } else if(time_ != 0) {
             CalcDistance();
             txt = QString::number(distance_);
-            cout << "Distance : " << distance_ << endl;
             ui->lineEdit_d->selectAll();
             ui->lineEdit_d->insert(txt);
         }
@@ -87,16 +88,19 @@ void MainWindow::on_lineEdit_d_editingFinished()
         if(energy_ != 0) {
             CalcTimeOfFlight();
             txt = QString::number(time_);
-            cout << "Time : " << time_ << endl;
             ui->lineEdit_t->selectAll();
             ui->lineEdit_t->insert(txt);
         } else if(time_ != 0) {
             CalcEnergy();
             txt = QString::number(energy_);
-            cout << "Energy : " << energy_ << endl;
             ui->lineEdit_en->selectAll();
             ui->lineEdit_en->insert(txt);
         }
+    } else {
+        CalcGammaTimeOfFlight();
+        txt = QString::number(time_);
+        ui->lineEdit_t->selectAll();
+        ui->lineEdit_t->insert(txt);
     }
 }
 
@@ -108,13 +112,11 @@ void MainWindow::on_lineEdit_t_editingFinished()
         if(distance_ != 0) {
             CalcEnergy();
             txt = QString::number(energy_);
-            cout << "Energy : " << energy_ << endl;
             ui->lineEdit_en->selectAll();
             ui->lineEdit_en->setText(txt);
         } else if(energy_ != 0) {
             CalcDistance();
             txt = QString::number(distance_);
-            cout << "Distance : " << distance_ << endl;
             ui->lineEdit_d->selectAll();
             ui->lineEdit_d->setText(txt);
         }
