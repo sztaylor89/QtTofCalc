@@ -2,6 +2,8 @@
 #define MAINWINDOW_HPP
 #include <cmath>
 
+#include "Mass.hpp"
+
 #include <QMainWindow>
 
 namespace Ui {
@@ -21,11 +23,28 @@ private slots:
 
     void on_checkBox_clicked(bool checked);
 
+    void on_lineEdit_z_editingFinished();
+
+    void on_lineEdit_en_editingFinished();
+
+    void on_lineEdit_a_editingFinished();
+
+    void on_lineEdit_d_editingFinished();
+
+    void on_lineEdit_t_editingFinished();
+
 private:
     Ui::MainWindow *ui;
+
+    bool isPhoton_, zSet_, aSet_;
     double idx_;
     double energy_, mass_, distance_,time_, c_;
+    int z_, a_;
+    double convUtoMeVperCperC_; //!< Conversion factor from amu to MeV/c/c
 
+    Mass masses_;
+
+    void SetMass(void);
 
     void CalcEnergy(void) {
         energy_ = 0.5*mass_*std::pow(distance_/(time_*c_),2.);

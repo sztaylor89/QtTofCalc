@@ -14,10 +14,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         MainWindow.cpp \
-    PhotonDialog.cpp
+    PhotonDialog.cpp \
+    Mass.cpp \
+    MassWarningDialog.cpp
 
 HEADERS  += MainWindow.hpp \
-    PhotonDialog.hpp
+    PhotonDialog.hpp \
+    Mass.hpp \
+    Tokenizer.hpp \
+    MassWarningDialog.hpp
 
 FORMS    += MainWindow.ui \
-    PhotonDialog.ui
+    PhotonDialog.ui \
+    MassWarningDialog.ui
