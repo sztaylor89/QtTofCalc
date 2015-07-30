@@ -84,7 +84,7 @@ void MainWindow::on_lineEdit_d_editingFinished()
 {
     QString txt;
     distance_ = ui->lineEdit_d->text().toDouble();
-    if(mass_ != 0.0) {
+    if(mass_ != 0.0 && !isPhoton_) {
         if(energy_ != 0) {
             CalcTimeOfFlight();
             txt = QString::number(time_);
