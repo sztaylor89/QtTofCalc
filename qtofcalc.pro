@@ -1,32 +1,32 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2015-06-18T08:37:50
+# Project created by S. V. Paulauskas 2015-06-18T08:37:50
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = qtofcalc
 TEMPLATE = app
 
+INCLUDEPATH=include
 
-SOURCES += main.cpp\
-        MainWindow.cpp \
-    PhotonDialog.cpp \
-    Mass.cpp \
-    MassWarningDialog.cpp
+SOURCES += source/main.cpp\
+    source/MainWindow.cpp \
+    source/PhotonDialog.cpp \
+    source/Mass.cpp \
+    source/MassWarningDialog.cpp
 
-HEADERS  += MainWindow.hpp \
-    PhotonDialog.hpp \
-    Mass.hpp \
-    Tokenizer.hpp \
-    MassWarningDialog.hpp
+HEADERS += include/MainWindow.hpp \
+    include/PhotonDialog.hpp \
+    include/Mass.hpp \
+    include/Tokenizer.hpp \
+    include/MassWarningDialog.hpp
 
-FORMS    += MainWindow.ui \
-    PhotonDialog.ui \
-    MassWarningDialog.ui
+FORMS += forms/MainWindow.ui \
+    forms/PhotonDialog.ui \
+    forms/MassWarningDialog.ui
 
-DISTFILES += \
-    masses.dat
+DISTFILES += share/masses.dat
